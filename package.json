@@ -1,0 +1,34 @@
+{
+  "name": "eslint-config-lytovka",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config"
+  ],
+  "scripts": {
+    "lint": "eslint --config index.js .",
+    "find-new-rules:main": "eslint-find-rules --unused ./index.js"
+  },
+  "eslintConfig": {
+    "extends": "./index.js"
+  },
+  "author": "Ivan Lytovka <ivanlytovka@gmail.com> (https://github.com/lytovka)",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "eslint-config-prettier": "^8.5.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.4.10",
+    "eslint": "^8.28.0",
+    "eslint-find-rules": "^4.1.0",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0",
+    "typescript": "^4.0.0"
+  }
+}

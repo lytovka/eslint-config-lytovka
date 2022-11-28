@@ -1,0 +1,108 @@
+/** @type {import('@types/eslint').Linter.BaseConfig} */
+
+module.exports = {
+  extends: ["eslint:recommended", "prettier"],
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+  },
+  rules: {
+    "accessor-pairs": "error",
+    "array-callback-return": "error",
+    "arrow-body-style": "off",
+    "block-scoped-var": "error",
+    camelcase: "off",
+    "capitalized-comments": "off", // no, Thanks.
+    "class-methods-use-this": "off",
+    complexity: ["error", 20],
+    "consistent-return": "error",
+    "consistent-this": "off",
+    "constructor-super": "error",
+    curly: ["error", "multi-line"],
+    "default-case": "error",
+    "default-case-last": "error",
+    "default-param-last": "off",
+    "dot-notation": "error",
+    eqeqeq: "off",
+    "for-direction": "error",
+    "func-name-matching": "error",
+    "func-names": "error",
+    "func-style": "off",
+    "getter-return": "error",
+    "grouped-accessor-pairs": "off",
+    "guard-for-in": "error",
+    "id-denylist": "error",
+    "id-length": "off",
+    "id-match": "off", // TODO: figure out an optimal regex for identifiers
+    "sort-imports": "off",
+    "sort-keys": "off",
+    "sort-vars": "off",
+    "max-lines-per-function": "off",
+    "max-statements-per-line": ["error", {max: 1}],
+    "logical-assignment-operators": "off", // although more concise, it arguably may cause greater cognitive load to read and grasp meaning
+    "no-unused-vars": [
+      "error",
+      {
+        args: "after-used",
+        argsIgnorePattern: "^_",
+        ignoreRestSiblings: true,
+        varsIgnorePattern: "^ignored",
+      },
+    ],
+    "no-unused-private-class-members": "error",
+    "no-array-constructor": "error",
+    "no-console": "off", // becomes quite problematic in Node environment
+    "no-div-regex": "error",
+    "no-extra-bind": "error",
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-label-var": "error",
+    "no-loop-func": "error",
+    "no-negated-condition": "off", // legibility of a negated condition should be decided on a per-case basis
+    "no-new-native-nonconstructor": "error",
+    "no-param-reassign": "off", // let's see if this ever becomes a problem...
+    "no-restricted-exports": "off",
+    "no-restricted-syntax": "off", // nothing immediate comes to mind
+    "no-self-compare": "error",
+    "no-ternary": "off",
+    "no-underscore-dangle": "off", // can emphasize that an identifier is special
+    "no-unused-expressions": "off", // an expression might be used later
+    "no-useless-concat": "error",
+    "no-useless-constructor": "error",
+    "no-var": "error",
+    "one-var": ["error", {initialized: "never"}],
+    "prefer-const": "error",
+    "prefer-numeric-literals": "error",
+    "init-declarations": "off",
+    "line-comment-position": "off", // smh
+    "lines-between-class-members": "off",
+    "max-classes-per-file": "off",
+    "max-depth": ["error", 4],
+    "max-lines": [
+      "error",
+      {max: 1000, skipBlankLines: false, skipComments: false},
+    ],
+    "max-nested-callbacks": ["error", 3],
+    "no-extend-native": "error",
+    "max-params": ["error", 5],
+    "max-statements": "off",
+    "multiline-comment-style": "off",
+    "new-cap": "error",
+    "no-alert": "error",
+    "no-await-in-loop": "error",
+    "no-constructor-return": "error",
+    "no-continue": "off",
+    "no-duplicate-imports": "error",
+    "no-else-return": "off", // idk
+    "no-empty-function": "off",
+    "no-empty-static-block": "error",
+    "no-bitwise": "error",
+    "no-caller": "error",
+    "no-constant-binary-expression": "error",
+    "no-eq-null": "off",
+    "no-extra-label": "error",
+    "no-implicit-coercion": "off",
+    "no-implicit-globals": "error",
+  },
+}
