@@ -1,22 +1,38 @@
 {
   "name": "eslint-config-lytovka",
   "version": "1.0.0",
-  "description": "",
+  "description": "ESLint rules configuration according to Ivan Lytovka's preference.",
   "keywords": [
     "eslint",
     "eslintconfig",
-    "config"
+    "config",
+    "lytovka"
   ],
+  "homepage": "https://github.com/lytovka/eslint-config-lytovka",
+  "bugs": {
+    "url": "https://github.com/lytovka/eslint-config-lytovka/issues",
+    "email": "ivanlytovka@gmail.com"
+  },
+  "author": "Ivan Lytovka <ivanlytovka@gmail.com> (https://github.com/lytovka)",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "eslintConfig": {
+    "extends": "./index.js"
+  },
+  "eslintIgnore": [
+    "node_modules"
+  ],
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0",
+    "npm": ">=6",
+    "yarn": ">=1"
+  },
+  "engineStrict": true,
   "scripts": {
     "lint": "eslint --config index.js .",
     "find-new-rules:main": "eslint-find-rules --unused ./index.js"
   },
-  "eslintConfig": {
-    "extends": "./index.js"
-  },
-  "author": "Ivan Lytovka <ivanlytovka@gmail.com> (https://github.com/lytovka)",
-  "license": "MIT",
-  "private": true,
   "dependencies": {
     "eslint-config-prettier": "^8.5.0"
   },
@@ -30,5 +46,10 @@
   "peerDependencies": {
     "eslint": "^8.0.0",
     "typescript": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
   }
 }
