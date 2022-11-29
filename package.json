@@ -21,6 +21,9 @@
   "main": "index.js",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "eslintConfig": {
     "extends": "./index.js"
   },
