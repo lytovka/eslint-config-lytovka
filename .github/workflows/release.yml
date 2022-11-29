@@ -3,30 +3,20 @@ on:
   release:
     types: [created]
 jobs:
-  main:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm run lint
-
-  publish-gpr:
-    needs: main
-    runs-on: ubuntu-latest
-    strategy:
     permissions:
       contents: read
       packages: write
     steps:
       - uses: actions/checkout@v3
+      # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@lytovka'
+          # Defaults to the user or organization that owns the workflow file
+          scope: '@octocat'
       - run: npm ci
       - run: npm publish
         env:
