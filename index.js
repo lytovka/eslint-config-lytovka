@@ -39,7 +39,7 @@ module.exports = {
     "sort-keys": "off",
     "sort-vars": "off",
     "max-lines-per-function": "off",
-    "max-statements-per-line": ["error", {max: 1}],
+    "max-statements-per-line": ["error", { max: 1 }],
     "logical-assignment-operators": "off", // although more concise, it arguably may cause greater cognitive load to read and grasp meaning
     "no-unused-vars": [
       "error",
@@ -71,7 +71,7 @@ module.exports = {
     "no-useless-concat": "error",
     "no-useless-constructor": "error",
     "no-var": "error",
-    "one-var": ["error", {initialized: "never"}],
+    "one-var": ["error", { initialized: "never" }],
     "prefer-const": "error",
     "prefer-numeric-literals": "error",
     "init-declarations": "off",
@@ -81,7 +81,7 @@ module.exports = {
     "max-depth": ["error", 4],
     "max-lines": [
       "error",
-      {max: 1000, skipBlankLines: false, skipComments: false},
+      { max: 1000, skipBlankLines: false, skipComments: false },
     ],
     "max-nested-callbacks": ["error", 3],
     "no-extend-native": "error",
@@ -104,5 +104,71 @@ module.exports = {
     "no-extra-label": "error",
     "no-implicit-coercion": "off",
     "no-implicit-globals": "error",
+    "no-inline-comments": "off", // who \n // cares?
+    "no-lonely-if": "error",
+    "no-new": "error",
+    "no-plusplus": "off", // can be handy
+    "no-restricted-properties": "off", // not sure what properties to disallow at the moment
+    "no-shadow": "error",
+    "no-unmodified-loop-condition": "error",
+    "no-useless-computed-key": "error",
+    "object-shorthand": "error",
+    "prefer-exponentiation-operator": "off", // revisit later, not buying it now
+    "prefer-regex-literals": "off", // will decide once I become a regex wizard
+    "require-atomic-updates": ["error", { allowProperties: true }],
+    "no-invalid-this": "error",
+    "no-multi-assign": "error",
+    "no-new-wrappers": "error",
+    "no-restricted-imports": "off", // should be configured in a project that uses this preset
+    "no-iterator": "error",
+    "no-nested-ternary": "off",
+    "no-proto": "error",
+    "no-sequences": "error",
+    "no-unneeded-ternary": "error",
+    "no-useless-return": "error",
+    "prefer-arrow-callback": "off",
+    "prefer-promise-reject-errors": "error",
+    "require-await": "error",
+    "vars-on-top": "error",
+    "no-labels": "error",
+    "no-new-func": "error",
+    "no-restricted-globals": "off", // revisit later
+    "no-template-curly-in-string": "error",
+    "no-lone-blocks": "error",
+    "no-promise-executor-return": "error",
+    "no-undef-init": "error",
+    "no-useless-rename": "error",
+    "prefer-destructuring": "off",
+    "no-magic-numbers": "off", // we all need some magic once in a while
+    "no-return-await": "off",
+    "no-use-before-define": "off",
+    "padding-line-between-statements": [
+      "error",
+      { blankLine: "always", prev: "*", next: "return" },
+    ],
+    "prefer-spread": "error",
+    strict: "off",
+    "no-multi-str": "off",
+    "no-script-url": "error",
+    "no-useless-call": "error",
+    "prefer-named-capture-group": "off", // gotta learn proper regex first
+    "prefer-template": "error",
+    "symbol-description": "error",
+    "no-new-object": "error",
+    "no-void": "off",
+    radix: "error",
+    "no-octal-escape": "error",
+    "no-warning-comments": "off", // ["error", { "terms": ["todo", "fixme"], "location": "start" }]
+    "require-unicode-regexp": "off",
+    "no-return-assign": "error",
+    "operator-assignment": "off", // per-case basis
+    "spaced-comment": "off", // excessively pedantic rule
+    "no-throw-literal": "error",
+    "prefer-object-has-own": "error",
+    yoda: "error",
+    "no-undefined": "off",
+    "prefer-object-spread": "error",
+    "no-unreachable-loop": "error",
+    "prefer-rest-params": "error",
   },
 }
