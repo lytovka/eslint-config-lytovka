@@ -1,7 +1,18 @@
 /** @type {import('@types/eslint').Linter.BaseConfig} */
+const fs = require("fs")
+const path = require("path")
+
+const tsConfigPath = process.env.ESLINT_TSCONFIG_PATH || "tsconfig.json"
+
+const tsConfig = fs.existsSync(tsConfigPath)
+  ? path.resolve(tsConfigPath)
+  : undefined
 
 module.exports = {
-  extends: ["eslint:recommended", "prettier"],
+  extends: ["prettier"],
+  parserOptions: {
+    sourceType: "module",
+  },
   env: {
     browser: true,
     node: true,
@@ -22,8 +33,8 @@ module.exports = {
     curly: ["error", "multi-line"],
     "default-case": "error",
     "default-case-last": "error",
-    "default-param-last": "off",
-    "dot-notation": "error",
+    "default-param-last": "error",
+    "dot-notation": "warn",
     eqeqeq: "off",
     "for-direction": "error",
     "func-name-matching": "error",
@@ -40,9 +51,9 @@ module.exports = {
     "sort-vars": "off",
     "max-lines-per-function": "off",
     "max-statements-per-line": ["error", { max: 1 }],
-    "logical-assignment-operators": "off", // although more concise, it arguably may cause greater cognitive load to read and grasp meaning
+    "logical-assignment-operators": "off", // although more concise, this notation is arguably more difficult to comprehend
     "no-unused-vars": [
-      "error",
+      "warn",
       {
         args: "after-used",
         argsIgnorePattern: "^_",
@@ -56,12 +67,14 @@ module.exports = {
     "no-div-regex": "error",
     "no-extra-bind": "error",
     "no-eval": "error",
+    "no-extra-semi": "error",
     "no-implied-eval": "error",
     "no-label-var": "error",
     "no-loop-func": "error",
     "no-negated-condition": "off", // legibility of a negated condition should be decided on a per-case basis
     "no-new-native-nonconstructor": "error",
     "no-param-reassign": "off", // let's see if this ever becomes a problem...
+    "no-redeclare": "error",
     "no-restricted-exports": "off",
     "no-restricted-syntax": "off", // nothing immediate comes to mind
     "no-self-compare": "error",
@@ -93,6 +106,10 @@ module.exports = {
     "no-await-in-loop": "error",
     "no-constructor-return": "error",
     "no-continue": "off",
+    "no-dupe-args": "error",
+    "no-dupe-else-if": "error",
+    "no-dupe-keys": "error",
+    "no-duplicate-case": "error",
     "no-duplicate-imports": "error",
     "no-else-return": "off", // idk
     "no-empty-function": "off",
@@ -116,6 +133,7 @@ module.exports = {
     "prefer-exponentiation-operator": "off", // revisit later, not buying it now
     "prefer-regex-literals": "off", // will decide once I become a regex wizard
     "require-atomic-updates": ["error", { allowProperties: true }],
+    "no-loss-of-precision": "error",
     "no-invalid-this": "error",
     "no-multi-assign": "error",
     "no-new-wrappers": "error",
@@ -143,7 +161,7 @@ module.exports = {
     "no-return-await": "off",
     "no-use-before-define": "off",
     "padding-line-between-statements": [
-      "error",
+      "warn",
       { blankLine: "always", prev: "*", next: "return" },
     ],
     "prefer-spread": "error",
@@ -171,4 +189,117 @@ module.exports = {
     "no-unreachable-loop": "error",
     "prefer-rest-params": "error",
   },
+  overrides: [
+    {
+      files: ["**/*.ts?(x)"],
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: "module",
+        project: [tsConfig],
+      },
+      plugins: ["@typescript-eslint"],
+      rules: {
+        // Recommended rules: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended-requiring-type-checking.ts
+        "@typescript-eslint/await-thenable": "error",
+        "@typescript-eslint/no-floating-promises": "error",
+        "@typescript-eslint/no-for-in-array": "error",
+        "no-implied-eval": "off",
+        "@typescript-eslint/no-implied-eval": "error",
+        "@typescript-eslint/no-misused-promises": "error",
+        "@typescript-eslint/no-unnecessary-type-assertion": "error",
+        "@typescript-eslint/no-unsafe-argument": "error",
+        "@typescript-eslint/no-unsafe-assignment": "error",
+        "@typescript-eslint/no-unsafe-call": "error",
+        "@typescript-eslint/no-unsafe-member-access": "error",
+        "@typescript-eslint/no-unsafe-return": "error",
+        "require-await": "off",
+        "@typescript-eslint/require-await": "error",
+        "@typescript-eslint/restrict-plus-operands": "error",
+        "@typescript-eslint/restrict-template-expressions": "error",
+        "@typescript-eslint/unbound-method": "error",
+
+        // Remaining TypeScript Rules
+        "@typescript-eslint/adjacent-overload-signatures": "warn",
+        "@typescript-eslint/array-type": "warn",
+        "@typescript-eslint/ban-ts-comment": [
+          "error",
+          {
+            "ts-ignore": "allow-with-description",
+          },
+        ],
+        "@typescript-eslint/ban-tslint-comment": "error",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/class-literal-property-style": "off",
+        "@typescript-eslint/consistent-generic-constructors": "off",
+        "@typescript-eslint/consistent-indexed-object-style": "off",
+        "@typescript-eslint/consistent-type-assertions": "off",
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/consistent-type-exports": "warn",
+        "@typescript-eslint/consistent-type-imports": "warn",
+        "@typescript-eslint/explicit-function-return-type": "warn",
+        "@typescript-eslint/explicit-member-accessibility": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/member-ordering": "off", // doesn't make sense to include granular options in the preset
+        "@typescript-eslint/method-signature-style": "off",
+        "@typescript-eslint/naming-convention": "off", // should be set per each project separately 
+        
+
+        // Remaining Extension rules
+        "default-param-last": "off",
+        "@typescript-eslint/default-param-last": "error",
+        "dot-notation": "off",
+        "@typescript-eslint/dot-notation": "warn",
+        "init-declarations": "off",
+        "@typescript-eslint/init-declarations": "error",
+        "no-array-constructor": "off",
+        "@typescript-eslint/no-array-constructor": "error",
+        "no-dupe-class-members": "off",
+        "@typescript-eslint/no-dupe-class-members": "off",
+        "no-empty-function": "off",
+        "@typescript-eslint/no-empty-function": "error",
+        "no-extra-semi": "off",
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-invalid-this": "off",
+        "@typescript-eslint/no-invalid-this": "warn",
+        "no-loop-func": "off",
+        "@typescript-eslint/no-loop-func": "warn",
+        "no-loss-of-precision": "off",
+        "@typescript-eslint/no-loss-of-precision": "error",
+        "no-magic-numbers": "off",
+        "@typescript-eslint/no-magic-numbers": "off",
+        "no-redeclare": "off",
+        "@typescript-eslint/no-redeclare": "off",
+        "no-restricted-imports": "off",
+        "@typescript-eslint/no-restricted-imports": "off",
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": "error",
+        "no-throw-literal": "off",
+        "@typescript-eslint/no-throw-literal": "error",
+        "no-unused-expressions": "off",
+        "@typescript-eslint/no-unused-expressions": "off",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            args: "after-used",
+            argsIgnorePattern: "^_",
+            ignoreRestSiblings: true,
+            varsIgnorePattern: "^ignored",
+          },
+        ],
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "no-useless-constructor": "off",
+        "@typescript-eslint/no-useless-constructor": "error",
+        "padding-line-between-statements": "off",
+        "@typescript-eslint/padding-line-between-statements": [
+          "warn",
+          { blankLine: "always", prev: "*", next: "return" },
+        ],
+        "no-return-await": "off",
+        "@typescript-eslint/return-await": "error",
+      },
+    },
+  ],
 }
