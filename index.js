@@ -203,6 +203,7 @@ module.exports = {
       },
       plugins: ["@typescript-eslint"],
       rules: {
+        "no-duplicate-imports": "off",
         // Recommended rules: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended-requiring-type-checking.ts
         "@typescript-eslint/await-thenable": "error",
         "@typescript-eslint/no-for-in-array": "error",
@@ -226,7 +227,7 @@ module.exports = {
         "dot-notation": "off",
         "@typescript-eslint/dot-notation": "warn",
         "init-declarations": "off",
-        "@typescript-eslint/init-declarations": "error",
+        "@typescript-eslint/init-declarations": "off",
         "no-array-constructor": "off",
         "@typescript-eslint/no-array-constructor": "error",
         "no-dupe-class-members": "off",
@@ -277,7 +278,10 @@ module.exports = {
 
         // Remaining TypeScript Rules
         "@typescript-eslint/adjacent-overload-signatures": "warn",
-        "@typescript-eslint/array-type": "warn",
+        "@typescript-eslint/array-type": [
+          "warn",
+          { default: "generic", readonly: "generic" },
+        ],
         "@typescript-eslint/ban-ts-comment": [
           "error",
           {
@@ -329,7 +333,7 @@ module.exports = {
         "@typescript-eslint/no-redundant-type-constituents": "error",
         "@typescript-eslint/no-require-imports": "off",
         "@typescript-eslint/no-this-alias": "error",
-        "@typescript-eslint/no-type-alias": "error",
+        "@typescript-eslint/no-type-alias": "off",
         "@typescript-eslint/no-unnecessary-boolean-literal-compare": "warn",
         "@typescript-eslint/no-unnecessary-condition": "error",
         "@typescript-eslint/no-unnecessary-qualifier": "error",
