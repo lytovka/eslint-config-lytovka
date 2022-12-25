@@ -2,11 +2,13 @@
 const fs = require("fs")
 const path = require("path")
 
-const tsConfigPath = process.env.ESLINT_TSCONFIG_PATH || "tsconfig.json"
+const tsConfig = process.env.ESLINT_TSCONFIG_PATH || "tsconfig.json"
 
-const tsConfig = fs.existsSync(tsConfigPath)
-  ? path.resolve(tsConfigPath)
+const tsConfigAbsolutePath = fs.existsSync(tsConfig)
+  ? path.resolve(tsConfig)
   : undefined
+
+const projectRootDir = __dirname
 
 module.exports = {
   extends: ["prettier"],
@@ -196,17 +198,16 @@ module.exports = {
       parserOptions: {
         ecmaVersion: 2020,
         sourceType: "module",
-        project: [tsConfig],
+        tsconfigRootDir: projectRootDir,
+        project: [tsConfigAbsolutePath],
       },
       plugins: ["@typescript-eslint"],
       rules: {
         // Recommended rules: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended-requiring-type-checking.ts
         "@typescript-eslint/await-thenable": "error",
-        "@typescript-eslint/no-floating-promises": "error",
         "@typescript-eslint/no-for-in-array": "error",
         "no-implied-eval": "off",
         "@typescript-eslint/no-implied-eval": "error",
-        "@typescript-eslint/no-misused-promises": "error",
         "@typescript-eslint/no-unnecessary-type-assertion": "error",
         "@typescript-eslint/no-unsafe-argument": "error",
         "@typescript-eslint/no-unsafe-assignment": "error",
@@ -219,33 +220,7 @@ module.exports = {
         "@typescript-eslint/restrict-template-expressions": "error",
         "@typescript-eslint/unbound-method": "error",
 
-        // Remaining TypeScript Rules
-        "@typescript-eslint/adjacent-overload-signatures": "warn",
-        "@typescript-eslint/array-type": "warn",
-        "@typescript-eslint/ban-ts-comment": [
-          "error",
-          {
-            "ts-ignore": "allow-with-description",
-          },
-        ],
-        "@typescript-eslint/ban-tslint-comment": "error",
-        "@typescript-eslint/ban-types": "off",
-        "@typescript-eslint/class-literal-property-style": "off",
-        "@typescript-eslint/consistent-generic-constructors": "off",
-        "@typescript-eslint/consistent-indexed-object-style": "off",
-        "@typescript-eslint/consistent-type-assertions": "off",
-        "@typescript-eslint/consistent-type-definitions": "off",
-        "@typescript-eslint/consistent-type-exports": "warn",
-        "@typescript-eslint/consistent-type-imports": "warn",
-        "@typescript-eslint/explicit-function-return-type": "warn",
-        "@typescript-eslint/explicit-member-accessibility": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/member-ordering": "off", // doesn't make sense to include granular options in the preset
-        "@typescript-eslint/method-signature-style": "off",
-        "@typescript-eslint/naming-convention": "off", // should be set per each project separately 
-        
-
-        // Remaining Extension rules
+        // Extension rules
         "default-param-last": "off",
         "@typescript-eslint/default-param-last": "error",
         "dot-notation": "off",
@@ -299,6 +274,96 @@ module.exports = {
         ],
         "no-return-await": "off",
         "@typescript-eslint/return-await": "error",
+
+        // Remaining TypeScript Rules
+        "@typescript-eslint/adjacent-overload-signatures": "warn",
+        "@typescript-eslint/array-type": "warn",
+        "@typescript-eslint/ban-ts-comment": [
+          "error",
+          {
+            "ts-ignore": "allow-with-description",
+          },
+        ],
+        "@typescript-eslint/ban-tslint-comment": "error",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/class-literal-property-style": "off",
+        "@typescript-eslint/consistent-generic-constructors": "off",
+        "@typescript-eslint/consistent-indexed-object-style": "off",
+        "@typescript-eslint/consistent-type-assertions": "off",
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/consistent-type-exports": "warn",
+        "@typescript-eslint/consistent-type-imports": "warn",
+        "@typescript-eslint/explicit-function-return-type": "off", // I prefer type inference on primitive types
+        "@typescript-eslint/explicit-member-accessibility": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/member-ordering": "off", // doesn't make sense to include granular options in the preset
+        "@typescript-eslint/method-signature-style": "off",
+        "@typescript-eslint/naming-convention": "off", // should be set per each project separately
+        "@typescript-eslint/no-base-to-string": "warn",
+        "@typescript-eslint/no-confusing-non-null-assertion": "off",
+        "@typescript-eslint/no-confusing-void-expression": "warn",
+        "@typescript-eslint/no-duplicate-enum-values": "warn",
+        "@typescript-eslint/no-dynamic-delete": "error",
+        "@typescript-eslint/no-empty-interface": "error",
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-extra-non-null-assertion": "error",
+        "@typescript-eslint/no-extraneous-class": "error",
+        "@typescript-eslint/no-floating-promises": [
+          "warn",
+          { ignoreVoid: true },
+        ],
+        "@typescript-eslint/no-inferrable-types": "warn",
+        "@typescript-eslint/no-invalid-void-type": "warn",
+        "@typescript-eslint/no-meaningless-void-operator": "off", // this rule suppresses `no-floating-promises`
+        "@typescript-eslint/no-misused-new": "error",
+        "@typescript-eslint/no-misused-promises": [
+          "error",
+          {
+            checksVoidReturn: false,
+          },
+        ],
+        "@typescript-eslint/no-namespace": "error",
+        "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "warn",
+        "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
+        "@typescript-eslint/no-non-null-assertion": "warn",
+        "@typescript-eslint/no-redundant-type-constituents": "error",
+        "@typescript-eslint/no-require-imports": "off",
+        "@typescript-eslint/no-this-alias": "error",
+        "@typescript-eslint/no-type-alias": "error",
+        "@typescript-eslint/no-unnecessary-boolean-literal-compare": "warn",
+        "@typescript-eslint/no-unnecessary-condition": "error",
+        "@typescript-eslint/no-unnecessary-qualifier": "error",
+        "@typescript-eslint/no-unnecessary-type-arguments": "off", // Not sure I follow their examples
+        "@typescript-eslint/no-unnecessary-type-constraint": "error",
+        "@typescript-eslint/no-unsafe-declaration-merging": "error",
+        "@typescript-eslint/no-useless-empty-export": "off",
+        "@typescript-eslint/no-var-requires": "error",
+        "@typescript-eslint/non-nullable-type-assertion-style": "off",
+        "@typescript-eslint/parameter-properties": "error",
+        "@typescript-eslint/prefer-as-const": "warn",
+        "@typescript-eslint/prefer-enum-initializers": "off", // should be configured in a project that uses this preset
+        "@typescript-eslint/prefer-for-of": "error",
+        "@typescript-eslint/prefer-function-type": "warn",
+        "@typescript-eslint/prefer-includes": "warn",
+        "@typescript-eslint/prefer-literal-enum-member": "error",
+        "@typescript-eslint/prefer-namespace-keyword": "error",
+        "@typescript-eslint/prefer-nullish-coalescing": "warn",
+        "@typescript-eslint/prefer-optional-chain": "error",
+        "@typescript-eslint/prefer-readonly": "off",
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/prefer-reduce-type-parameter": "warn",
+        "@typescript-eslint/prefer-regexp-exec": "warn",
+        "@typescript-eslint/prefer-return-this-type": "warn",
+        "@typescript-eslint/prefer-string-starts-ends-with": "error",
+        "@typescript-eslint/prefer-ts-expect-error": "off", // clashes with `ban-ts-comment` rule
+        "@typescript-eslint/promise-function-async": "warn",
+        "@typescript-eslint/require-array-sort-compare": "off",
+        "@typescript-eslint/sort-type-constituents": "warn",
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        "@typescript-eslint/switch-exhaustiveness-check": "error",
+        "@typescript-eslint/triple-slash-reference": "error",
+        "@typescript-eslint/typedef": "off",
+        "@typescript-eslint/unified-signatures": "warn",
       },
     },
   ],
