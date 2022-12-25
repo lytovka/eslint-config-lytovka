@@ -41,12 +41,12 @@
     "find-new-rules:main": "eslint-find-rules --unused ./index.js"
   },
   "dependencies": {
-    "eslint-config-prettier": "^8.5.0"
+    "eslint-config-prettier": "^8.5.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.0"
   },
   "devDependencies": {
     "@types/eslint": "^8.4.10",
-    "@typescript-eslint/eslint-plugin": "^5.47.0",
-    "@typescript-eslint/parser": "^5.47.0",
     "eslint": "^8.28.0",
     "eslint-find-rules": "^4.1.0",
     "prettier": "^2.8.0",
