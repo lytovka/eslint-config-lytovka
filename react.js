@@ -59,7 +59,7 @@ module.exports = {
     "react/jsx-curly-newline": "warn",
     "react/jsx-curly-spacing": ["warn", { when: "never" }],
     "react/jsx-equals-spacing": ["warn", "never"],
-    "react/jsx-filename-extension": ["error", { extensions: [".js"] }],
+    "react/jsx-filename-extension": ["error"],
     "react/jsx-first-prop-new-line": "off",
     "react/jsx-fragments": "off",
     "react/jsx-handler-names": "off",
@@ -90,7 +90,7 @@ module.exports = {
     "react/no-danger": "off",
     "react/no-multi-comp": "off", // meh
     "react/no-namespace": "error",
-    "react/no-object-type-as-default-prop": "warn",
+    "react/no-object-type-as-default-prop": "off", // Not sure how to fix `Definition for rule 'react/no-object-type-as-default-prop' was not found`.
     "react/no-this-in-sfc": "error",
     "react/no-typos": "error",
     "react/no-unstable-nested-components": "error",
@@ -106,5 +106,14 @@ module.exports = {
 
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+
+    overrides: [
+      {
+        files: ["**/*.ts?(x)"],
+        rules: {
+          "react/jsx-filename-extension": ["error", { extensions: [".tsx"] }],
+        },
+      },
+    ],
   },
 }
