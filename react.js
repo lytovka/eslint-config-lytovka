@@ -68,7 +68,7 @@ module.exports = {
     "react/jsx-max-depth": "off",
     "react/jsx-max-props-per-line": "off", // prettier takes care of this
     "react/jsx-newline": "off",
-    "react/jsx-no-bind": "error",
+    "react/jsx-no-bind": "off",
     "react/jsx-no-constructed-context-values": "warn",
     "react/jsx-no-leaked-render": ["error", { validStrategies: ["ternary"] }],
     "react/jsx-no-literals": "off",
