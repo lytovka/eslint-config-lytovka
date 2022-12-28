@@ -1,4 +1,5 @@
 /** @type {import('@types/eslint').Linter.BaseConfig} */
+
 const fs = require("fs")
 const path = require("path")
 
