@@ -1,6 +1,6 @@
 {
   "name": "@lytovka/eslint-config",
-  "version": "0.0.15-alpha",
+  "version": "1.0.0",
   "description": "ESLint rules configuration according to Ivan Lytovka's preference.",
   "keywords": [
     "eslint",
