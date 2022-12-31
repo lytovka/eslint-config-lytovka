@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/lytovka/eslint-config/compare/v1.0.0...v1.1.0) (2022-12-31)
+
+
+### Features
+
+* start adding rules for `jsx-a11y` plugin  ([#6](https://github.com/lytovka/eslint-config/issues/6)) ([145e16f](https://github.com/lytovka/eslint-config/commit/145e16ffdcc3c98d6d0995e5e9691e55cac27b88))
+
 # 1.0.0 (2022-12-30)
 
 
