@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/lytovka/eslint-config/compare/v1.1.0...v1.2.0) (2022-12-31)
+
+
+### Features
+
+* add remaining `jsx-a11y` rules to the preset ([#7](https://github.com/lytovka/eslint-config/issues/7)) ([bcd8333](https://github.com/lytovka/eslint-config/commit/bcd8333c1a56bb7dadfe52a9575bcda2c8aadaae))
+
 # [1.1.0](https://github.com/lytovka/eslint-config/compare/v1.0.0...v1.1.0) (2022-12-31)
 
 
