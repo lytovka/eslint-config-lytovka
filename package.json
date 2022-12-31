@@ -1,6 +1,6 @@
 {
   "name": "@lytovka/eslint-config",
-  "version": "0.0.15-alpha",
+  "version": "1.0.0",
   "description": "ESLint rules configuration according to Ivan Lytovka's preference.",
   "keywords": [
     "eslint",
@@ -49,6 +49,8 @@
     "eslint-plugin-jsx-a11y": "^6.6.1"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/git": "^10.0.1",
     "@types/eslint": "^8.4.10",
     "eslint": "^8.28.0",
     "eslint-find-rules": "^4.1.0",
