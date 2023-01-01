@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/lytovka/eslint-config/compare/v1.2.6...v1.2.7) (2023-01-01)
+
+
+### CI
+
+* introduce workflow for pull requests ([#14](https://github.com/lytovka/eslint-config/issues/14)) ([fba6f93](https://github.com/lytovka/eslint-config/commit/fba6f93a50d2c43b5d0d7a1456d3bb05774a0db7))
+
 ## [1.2.6](https://github.com/lytovka/eslint-config/compare/v1.2.5...v1.2.6) (2023-01-01)
 
 
