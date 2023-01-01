@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/lytovka/eslint-config/compare/v1.2.4...v1.2.5) (2023-01-01)
+
+
+### Fixes
+
+* typo in docs ([94f8fe3](https://github.com/lytovka/eslint-config/commit/94f8fe3ff2d18b3d870e61d88623e100c7be07a5))
+
 ## [1.2.4](https://github.com/lytovka/eslint-config/compare/v1.2.3...v1.2.4) (2023-01-01)
 
 
