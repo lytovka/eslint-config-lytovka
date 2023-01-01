@@ -18,12 +18,23 @@ Then, add the extends to your `.eslintrc.js`:
 module.exports = {
   extends: ["@lytovka"],
   rules: {
-    // override rules
+    // override rules if needed
   },
 }
 ```
 
-### Other configs
+In addition, you can add scripts to your `package.json` to identify errors and warnings. For example:
+
+```json
+{
+  "scripts": {
+    "lint": "eslint --max-warnings 0 --cache --cache-location ./node_modules/.cache/.eslintcache --ext js,jsx,ts,tsx .",
+    "lint:fix": "eslint --fix ."
+  }
+}
+```
+
+## Other configs
 
 Currently this module exposes a few additional configs:
 
@@ -42,5 +53,18 @@ module.exports = {
   rules: {
     // override rules
   },
+}
+```
+
+## TypeScript rules
+
+By default, this module will search for `tsconfig.json` in the project root to determine if TypeScript ESLint rules should be enabled. Alternatively, you can overwrite the `ESLINT_TSCONFIG_PATH` environment variable to scan for a different file. For example:
+
+```js
+// .eslintrc.js
+process.env.ESLINT_TSCONFIG = "tsconfig.eslint.json"
+
+module.exports = {
+  extends: ["@lytovka"]
 }
 ```
