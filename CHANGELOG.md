@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/lytovka/eslint-config/compare/v1.2.5...v1.2.6) (2023-01-01)
+
+
+### Fixes
+
+* autodetect react version in `eslint-plugin-react` settings ([#13](https://github.com/lytovka/eslint-config/issues/13)) ([bfa1c37](https://github.com/lytovka/eslint-config/commit/bfa1c37823aaa30c8d8eaa289bb2968ccc21783b))
+
 ## [1.2.5](https://github.com/lytovka/eslint-config/compare/v1.2.4...v1.2.5) (2023-01-01)
 
 
