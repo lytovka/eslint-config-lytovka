@@ -1,14 +1,15 @@
-name: Release
+name: Release to npm registry
 on:
   push:
     branches:
       - main
 jobs:
   release:
-    name: Prepare release to npm registry
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Cancel previous runs
+        uses: styfle/cancel-workflow-action@0.10.0
+      - name: Checkout repo
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GH_TOKEN_SEMANTIC_RELEASE }}
@@ -17,8 +18,10 @@ jobs:
         with:
           node-version: "16.x"
       - name: Install dependencies
-        run: npm ci
-      - name: Semantic release
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
+      - name: Run semantic release
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
