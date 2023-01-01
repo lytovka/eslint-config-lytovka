@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/lytovka/eslint-config/compare/v1.2.2...v1.2.3) (2023-01-01)
+
+
+### Docs
+
+* add README file with installation steps ([#11](https://github.com/lytovka/eslint-config/issues/11)) ([b26372c](https://github.com/lytovka/eslint-config/commit/b26372ce8cafad848a634268ea8fb3f0f6426061))
+
 ## [1.2.2](https://github.com/lytovka/eslint-config/compare/v1.2.1...v1.2.2) (2023-01-01)
 
 
