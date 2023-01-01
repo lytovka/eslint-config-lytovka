@@ -62,7 +62,7 @@ By default, this module will search for `tsconfig.json` in the project root to d
 
 ```js
 // .eslintrc.js
-process.env.ESLINT_TSCONFIG = "tsconfig.eslint.json"
+process.env.ESLINT_TSCONFIG_PATH = "tsconfig.eslint.json"
 
 module.exports = {
   extends: ["@lytovka"]
