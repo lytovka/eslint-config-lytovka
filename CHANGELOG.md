@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/lytovka/eslint-config/compare/v1.2.3...v1.2.4) (2023-01-01)
+
+
+### Docs
+
+* section on TS and scripts on consumer project ([#12](https://github.com/lytovka/eslint-config/issues/12)) ([4d65e36](https://github.com/lytovka/eslint-config/commit/4d65e3671855067a951a67bda1d7efebccd46f36))
+
 ## [1.2.3](https://github.com/lytovka/eslint-config/compare/v1.2.2...v1.2.3) (2023-01-01)
 
 
