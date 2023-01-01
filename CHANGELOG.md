@@ -1,3 +1,10 @@
+## [1.2.8](https://github.com/lytovka/eslint-config/compare/v1.2.7...v1.2.8) (2023-01-01)
+
+
+### CI
+
+* bump cancel-workflow-action to v0.11.0 ([#15](https://github.com/lytovka/eslint-config/issues/15)) ([9d9d219](https://github.com/lytovka/eslint-config/commit/9d9d219253afd0d747d195370a63cb849ff4e950))
+
 ## [1.2.7](https://github.com/lytovka/eslint-config/compare/v1.2.6...v1.2.7) (2023-01-01)
 
 
