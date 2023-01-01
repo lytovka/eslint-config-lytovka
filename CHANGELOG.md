@@ -1,3 +1,15 @@
+## [1.2.2](https://github.com/lytovka/eslint-config/compare/v1.2.1...v1.2.2) (2023-01-01)
+
+
+### Chores
+
+* update release-notes-generator config ([#10](https://github.com/lytovka/eslint-config/issues/10)) ([a337c26](https://github.com/lytovka/eslint-config/commit/a337c266ad2e1030c42b26eb6efc67537605915e))
+
+
+### Fixes
+
+* install missing conventionalcommits devdependency ([f51ff4a](https://github.com/lytovka/eslint-config/commit/f51ff4adf4d7eea3fea864e241bdd8be1c9a9d49))
+
 ## [1.2.1](https://github.com/lytovka/eslint-config/compare/v1.2.0...v1.2.1) (2023-01-01)
 
 # [1.2.0](https://github.com/lytovka/eslint-config/compare/v1.1.0...v1.2.0) (2022-12-31)
