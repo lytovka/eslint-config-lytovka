@@ -11,6 +11,11 @@ module.exports = {
       jsx: true,
     },
   },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   rules: {
     // Recommended rules: https://github.com/jsx-eslint/eslint-plugin-react/blob/master/configs/recommended.js
     "react/display-name": "error",
