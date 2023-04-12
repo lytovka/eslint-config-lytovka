@@ -1,8 +1,6 @@
 name: Release to npm registry
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
+
 jobs:
   release:
     runs-on: ubuntu-latest
