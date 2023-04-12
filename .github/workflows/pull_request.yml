@@ -2,13 +2,14 @@ name: Pull Request
 on: pull_request
 jobs:
   build:
+    runs-on: ubuntu-latest
+    concurrency:
+        group: ${{ github.head_ref }}-pull-request
+        cancel-in-progress: true
+
     strategy:
       matrix:
         node: [16, 18, 19]
-    runs-on: ubuntu-latest
-    concurrency:
-        group: ${{ github.workflow }}-release
-        cancel-in-progress: true
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
