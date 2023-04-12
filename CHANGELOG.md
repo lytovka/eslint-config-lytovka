@@ -1,3 +1,23 @@
+## [1.2.9](https://github.com/lytovka/eslint-config/compare/v1.2.8...v1.2.9) (2023-04-12)
+
+
+### CI
+
+* configure Renovate for the repo ([#17](https://github.com/lytovka/eslint-config/issues/17)) ([afaee4d](https://github.com/lytovka/eslint-config/commit/afaee4d4387b69e05dd4a3e3b555a98f3b455a32))
+* run release workflow on `workflow_dispatch` event ([#16](https://github.com/lytovka/eslint-config/issues/16)) ([edd9d20](https://github.com/lytovka/eslint-config/commit/edd9d207b8e7f9377e99d1679eb3c8ce7e59c55f))
+
+
+### Fixes
+
+* add package rules to Renovate config ([#23](https://github.com/lytovka/eslint-config/issues/23)) ([09dd6ce](https://github.com/lytovka/eslint-config/commit/09dd6ced7174e46253ec6419aee5043fcc12251b))
+
+
+### Chores
+
+* **deps:** update dependency @semantic-release/changelog to v6.0.3 ([#19](https://github.com/lytovka/eslint-config/issues/19)) ([a4b6745](https://github.com/lytovka/eslint-config/commit/a4b67450a38a7b03f568e5149539e670a28cdf09))
+* **deps:** update dependency prettier to v2.8.7 ([#20](https://github.com/lytovka/eslint-config/issues/20)) ([14a2329](https://github.com/lytovka/eslint-config/commit/14a232963be37713fe8f3c7f119b6a8406826496))
+* **deps:** update dependency typescript to v4.9.5 ([#21](https://github.com/lytovka/eslint-config/issues/21)) ([f7f9bd9](https://github.com/lytovka/eslint-config/commit/f7f9bd93deaf9f884c3195eb4b8e957c1865e16d))
+
 ## [1.2.8](https://github.com/lytovka/eslint-config/compare/v1.2.7...v1.2.8) (2023-01-01)
 
 
