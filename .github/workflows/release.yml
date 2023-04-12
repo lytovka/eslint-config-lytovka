@@ -1,14 +1,13 @@
 name: Release to npm registry
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
+
 jobs:
   release:
     runs-on: ubuntu-latest
+    concurrency:
+        group: ${{ github.workflow }}-release
+        cancel-in-progress: true
     steps:
-      - name: Cancel previous runs
-        uses: styfle/cancel-workflow-action@0.11.0
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
