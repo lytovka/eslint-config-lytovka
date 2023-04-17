@@ -37,60 +37,61 @@ module.exports = {
       {
         preset: "conventionalcommits",
         presetConfig: {
+          header: "# Changelog\n\n",
           types: [
             {
               type: "refactor",
-              section: "Build",
+              section: "## Build 🛠️",
               hidden: false,
             },
             {
               type: "docs",
-              section: "Docs",
+              section: "## Docs 📚",
               hidden: false,
             },
             {
               type: "refactor",
-              section: "Refactor",
+              section: "## Refactor 👷",
               hidden: false,
             },
             {
               type: "ci",
-              section: "CI",
+              section: "## CI 🛠️",
               hidden: false,
             },
             {
               type: "style",
-              section: "Style",
+              section: "## Style 💅",
               hidden: false,
             },
             {
               type: "test",
-              section: "Tests",
+              section: "## Tests 🧪",
               hidden: false,
             },
             {
               type: "chore",
-              section: "Chores",
+              section: "## Chores 🧹",
               hidden: false,
             },
             {
               type: "perf",
-              section: "Performance",
+              section: "## Performance 🚀",
               hidden: false,
             },
             {
               type: "fix",
-              section: "Fixes",
+              section: "## Fixes 🐛",
               hidden: false,
             },
             {
               type: "feat",
-              section: "Features",
+              section: "## Features ✨",
               hidden: false,
             },
             {
               type: "revert",
-              section: "Revert",
+              section: "## Revert 🚧",
               hidden: false,
             },
           ],
