@@ -1,3 +1,12 @@
+## [1.2.10](https://github.com/lytovka/eslint-config/compare/v1.2.9...v1.2.10) (2023-04-17)
+
+
+### ## Chores 🧹
+
+* add files option ([#36](https://github.com/lytovka/eslint-config/issues/36)) ([b011a15](https://github.com/lytovka/eslint-config/commit/b011a15364a70c89587b19f053e0ce0423ef4a76))
+* beautify release changelogs ([#35](https://github.com/lytovka/eslint-config/issues/35)) ([de91b74](https://github.com/lytovka/eslint-config/commit/de91b746b91d79205d7663ff969cb06751f232bd))
+* **deps:** update dependency eslint to v8.38.0 ([#24](https://github.com/lytovka/eslint-config/issues/24)) ([a82c12b](https://github.com/lytovka/eslint-config/commit/a82c12b95fbf69122ee7633ab7c172cf1a226ce3))
+
 ## [1.2.9](https://github.com/lytovka/eslint-config/compare/v1.2.8...v1.2.9) (2023-04-12)
 
 
