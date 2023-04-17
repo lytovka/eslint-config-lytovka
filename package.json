@@ -18,6 +18,11 @@
     "url": "git://github.com/lytovka/eslint-config.git"
   },
   "author": "Ivan Lytovka <ivanlytovka@gmail.com> (https://github.com/lytovka)",
+  "files": [
+    "index.js",
+    "jsx-a11y.js",
+    "react.js"
+  ],
   "main": "index.js",
   "license": "MIT",
   "private": false,
