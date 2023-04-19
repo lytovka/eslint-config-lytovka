@@ -58,4 +58,18 @@ module.exports = {
     "import/prefer-default-export": "off",
     "import/unambiguous": "off",
   },
+  overrides: [
+    {
+      files: ["**/*.ts?(x)"],
+      extends: "plugin:import/typescript",
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        sourceType: "module",
+      },
+      plugins: ["@typescript-eslint"],
+      rules: {
+        "import/no-unresolved": "off",
+      },
+    },
+  ],
 }
