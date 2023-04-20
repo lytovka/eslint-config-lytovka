@@ -1,25 +1,25 @@
 /** @type {import('@types/eslint').Linter.BaseConfig} */
 
 module.exports = {
-  extends: ["prettier"],
-  parserOptions: {
-    sourceType: "module",
-  },
   env: {
     browser: true,
     node: true,
     es6: true,
   },
+  parserOptions: {
+    sourceType: "module",
+  },
+  plugins: ["import"],
+  settings: {
+    "import/ignore": ["node_modules"],
+  },
   rules: {
-    settings: {
-      "import/extensions": [".js", ".jsx"],
-    },
     "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
     "import/default": "error",
     "import/dynamic-import-chunkname": "error",
     "import/export": "error",
-    "import/exports-last": "error",
-    "import/extensions": ["error", "always", { ignorePackages: true }],
+    "import/exports-last": "off",
+    "import/extensions": "off",
     "import/first": "error",
     "import/group-exports": "off",
     "import/max-dependencies": "off",
@@ -33,7 +33,7 @@ module.exports = {
     "import/no-cycle": "error",
     "import/no-default-export": "off",
     "import/no-deprecated": "warn",
-    "import/no-duplicates": "error",
+    "import/no-duplicates": "warn",
     "import/no-dynamic-require": "error",
     "import/no-empty-named-blocks": "warn",
     "import/no-extraneous-dependencies": "error",
@@ -49,7 +49,7 @@ module.exports = {
     "import/no-relative-parent-imports": "off",
     "import/no-restricted-paths": "off",
     "import/no-self-import": "error",
-    "import/no-unassigned-import": "error",
+    "import/no-unassigned-import": "off",
     "import/no-unresolved": "error",
     "import/no-unused-modules": "off",
     "import/no-useless-path-segments": "warn",

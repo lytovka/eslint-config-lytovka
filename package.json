@@ -19,6 +19,7 @@
   },
   "author": "Ivan Lytovka <ivanlytovka@gmail.com> (https://github.com/lytovka)",
   "files": [
+    "import.js",
     "index.js",
     "jsx-a11y.js",
     "react.js"
