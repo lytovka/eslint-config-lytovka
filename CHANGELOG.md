@@ -1,3 +1,34 @@
+## [1.3.0](https://github.com/lytovka/eslint-config/compare/v1.2.10...v1.3.0) (2023-04-22)
+
+
+### ## Features ✨
+
+* add missing ESLint rules ([#37](https://github.com/lytovka/eslint-config/issues/37)) ([f4ba148](https://github.com/lytovka/eslint-config/commit/f4ba148bd06fd7780e738ddb444ef7eb09f47398))
+* add rules for `eslint-plugin-import` plugin ([#38](https://github.com/lytovka/eslint-config/issues/38)) ([88e2ddf](https://github.com/lytovka/eslint-config/commit/88e2ddfba951a01659834eebf38403c31bfc5137))
+
+
+### ## Fixes 🐛
+
+* **deps:** update dependency eslint-config-prettier to v8.8.0 ([#27](https://github.com/lytovka/eslint-config/issues/27)) ([a6d9b07](https://github.com/lytovka/eslint-config/commit/a6d9b0795d2a117ab95bba9e5a96f1add6036f8a))
+
+
+### ## Chores 🧹
+
+* **deps:** update dependency semantic-release to v21 ([#31](https://github.com/lytovka/eslint-config/issues/31)) ([0c659e3](https://github.com/lytovka/eslint-config/commit/0c659e316f8f99a6e22ce2a703622dcdda128a0b))
+* **deps:** update dependency typescript to v5 ([#32](https://github.com/lytovka/eslint-config/issues/32)) ([40889cf](https://github.com/lytovka/eslint-config/commit/40889cf5a90b3dcd2512a54d13d2bfc282301802))
+* **deps:** update node.js to v16.20.0 ([#26](https://github.com/lytovka/eslint-config/issues/26)) ([0d60a6f](https://github.com/lytovka/eslint-config/commit/0d60a6f8b919226e2bc7f2085a15aefeef6fb6a0))
+* upgrade to node v18 ([#39](https://github.com/lytovka/eslint-config/issues/39)) ([9a4936d](https://github.com/lytovka/eslint-config/commit/9a4936d50c22ba6eb454a68bad3f6fd6611e5e69))
+
+
+### ## CI 🛠️
+
+* use node version from `.nvmrc` ([#40](https://github.com/lytovka/eslint-config/issues/40)) ([1926fcf](https://github.com/lytovka/eslint-config/commit/1926fcf259a15adaf4047ac2ef7280d93300093b))
+
+
+### ## Docs 📚
+
+* mention import preset in README ([#41](https://github.com/lytovka/eslint-config/issues/41)) ([2d700b5](https://github.com/lytovka/eslint-config/commit/2d700b5bf34d45c565ae0b006cef6950cc8d0275))
+
 ## [1.2.10](https://github.com/lytovka/eslint-config/compare/v1.2.9...v1.2.10) (2023-04-17)
 
 
