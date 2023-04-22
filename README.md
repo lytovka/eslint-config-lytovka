@@ -40,6 +40,7 @@ Currently this module exposes a few additional configs:
 
 - `@lytovka/eslint-config/react`: preset for React projects.
 - `@lytovka/eslint-config/jsx-a11y`: preset for accessibility issues in React apps.
+- `@lytovka/eslint-config/import`: preset for import rules for JS and TS projects.
 
 Feel free to add those configs to the `extend` property:
 
@@ -49,6 +50,7 @@ module.exports = {
     "@lytovka",
     "@lytovka/eslint-config/react",
     "@lytovka/eslint-config/jsx-a11y",
+    "@lytovka/eslint-config/import"
   ],
   rules: {
     // override rules
