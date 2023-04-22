@@ -40,7 +40,7 @@ Currently this module exposes a few additional configs:
 
 - `@lytovka/eslint-config/react`: preset for React projects.
 - `@lytovka/eslint-config/jsx-a11y`: preset for accessibility issues in React apps.
-- `@lytovka/eslint-config/import`: preset for import rules for JS and TS projects.
+- `@lytovka/eslint-config/import`: preset for import rules (both JavaScript and TypeScript projects).
 
 Feel free to add those configs to the `extend` property:
 
