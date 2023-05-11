@@ -51,7 +51,7 @@ module.exports = {
     "react/forbid-foreign-prop-types": "off",
     "react/forbid-prop-types": "off",
     "react/function-component-definition": "off", // constrained in TS
-    "react/hook-use-state": "warn",
+    "react/hook-use-state": "off", // meh
     "react/iframe-missing-sandbox": "warn",
     "react/jsx-boolean-value": "warn",
     "react/jsx-child-element-spacing": "warn",
