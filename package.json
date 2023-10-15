@@ -44,7 +44,10 @@
   "engineStrict": true,
   "scripts": {
     "lint": "eslint --config index.js .",
-    "find-new-rules": "eslint-find-rules --unused ./index.js"
+    "find-new-rules": "eslint-find-rules --unused ./index.js",
+    "format": "npm run format:fix",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.47.0",
@@ -62,7 +65,7 @@
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint": "^8.28.0",
     "eslint-find-rules": "^4.1.0",
-    "prettier": "^2.8.0",
+    "prettier": "^3.0.0",
     "semantic-release": "^21.0.0",
     "typescript": "^5.0.0"
   },
