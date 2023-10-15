@@ -7,7 +7,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-        
       - name: Grab node version
         run: echo NVMRC=`cat .nvmrc` >> $GITHUB_ENV
       - name: Setup node
@@ -20,11 +19,11 @@ jobs:
         run: npm run lint:check
   
   prettier:
+    name: Prettier
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-        
       - name: Grab node version
         run: echo NVMRC=`cat .nvmrc` >> $GITHUB_ENV
       - name: Setup node
@@ -35,14 +34,13 @@ jobs:
         uses: npm ci
       - name: Lint
         run: npm run format:check
-  
-  
+
   build:
+    name: Build
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ matrix.node }}-${{ github.head_ref }}
       cancel-in-progress: true
-
     strategy:
       matrix:
         node: [16, 18, 19]
