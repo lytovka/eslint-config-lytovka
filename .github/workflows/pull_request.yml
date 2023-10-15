@@ -4,8 +4,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     concurrency:
-        group: ${{ matrix.node }}-${{ github.head_ref }}
-        cancel-in-progress: true
+      group: ${{ matrix.node }}-${{ github.head_ref }}
+      cancel-in-progress: true
 
     strategy:
       matrix:

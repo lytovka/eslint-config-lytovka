@@ -50,7 +50,7 @@ module.exports = {
     "@lytovka",
     "@lytovka/eslint-config/react",
     "@lytovka/eslint-config/jsx-a11y",
-    "@lytovka/eslint-config/import"
+    "@lytovka/eslint-config/import",
   ],
   rules: {
     // override rules
@@ -67,6 +67,6 @@ By default, this module will search for `tsconfig.json` in the project root to d
 process.env.ESLINT_TSCONFIG_PATH = "tsconfig.eslint.json"
 
 module.exports = {
-  extends: ["@lytovka"]
+  extends: ["@lytovka"],
 }
 ```
