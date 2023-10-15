@@ -17,7 +17,7 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint:check
-  
+
   prettier:
     name: Prettier
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
           node-version: ${{ env.NVMRC }}
       - name: Install deps
         run: npm ci
-      - name: Lint
+      - name: Prettier
         run: npm run format:check
 
   build:
