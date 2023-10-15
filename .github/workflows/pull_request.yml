@@ -38,9 +38,6 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ matrix.node }}-${{ github.head_ref }}
-      cancel-in-progress: true
     strategy:
       matrix:
         node: [16, 18, 19]
