@@ -10,8 +10,8 @@ jobs:
       cancel-in-progress: true
     permissions:
       contents: write
-      issues: write 
-      pull-requests: write 
+      issues: write
+      pull-requests: write
       id-token: write
     steps:
       - name: Checkout repo
