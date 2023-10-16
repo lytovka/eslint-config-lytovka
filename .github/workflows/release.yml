@@ -3,15 +3,19 @@ on: workflow_dispatch
 
 jobs:
   release:
+    name: 📦 Release package
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-release
       cancel-in-progress: true
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GH_TOKEN_SEMANTIC_RELEASE }}
       - name: Get Node.js version from .nvmrc
         run: echo NVMRC=`cat .nvmrc` >> $GITHUB_ENV
       - name: Setup Node.js
