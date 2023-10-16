@@ -2,7 +2,7 @@ name: Pull Request
 on: pull_request
 jobs:
   lint:
-    name: ESLint
+    name: ⚒️ ESLint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -19,7 +19,7 @@ jobs:
         run: npm run lint
 
   prettier:
-    name: Prettier
+    name: 💅 Prettier
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -36,7 +36,7 @@ jobs:
         run: npm run format:check
 
   build:
-    name: Build
+    name: 🚧 Build
     runs-on: ubuntu-latest
     strategy:
       matrix:
