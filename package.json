@@ -37,8 +37,8 @@
     "node_modules"
   ],
   "engines": {
-    "node": "^12.22.0 || ^14.17.0 || >=16.0.0",
-    "npm": ">=6",
+    "node": "^18.0.0 || >=20.0.0",
+    "npm": ">=9",
     "yarn": ">=1"
   },
   "engineStrict": true,
