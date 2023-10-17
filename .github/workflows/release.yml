@@ -1,6 +1,9 @@
 name: Release to npm registry
 on: workflow_dispatch
 
+permissions:
+  contents: read # for checkout
+
 jobs:
   release:
     name: 📦 Release package
@@ -17,8 +20,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
-          persist-credentials: false
+          fetch-depth: 0
       - name: Get Node.js version from .nvmrc
         run: echo NVMRC=`cat .nvmrc` >> $GITHUB_ENV
       - name: Setup Node.js
