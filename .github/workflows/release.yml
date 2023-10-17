@@ -17,6 +17,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
           persist-credentials: false
       - name: Get Node.js version from .nvmrc
         run: echo NVMRC=`cat .nvmrc` >> $GITHUB_ENV
@@ -31,5 +32,5 @@ jobs:
       - name: Run semantic release
         run: npx semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
