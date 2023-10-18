@@ -1,9 +1,6 @@
 name: Release to npm registry
 on: workflow_dispatch
 
-permissions:
-  contents: read # for checkout
-
 jobs:
   release:
     name: 📦 Release package
@@ -11,16 +8,12 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-release
       cancel-in-progress: true
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      id-token: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
       - name: Get Node.js version from .nvmrc
         run: echo NVMRC=`cat .nvmrc` >> $GITHUB_ENV
       - name: Setup Node.js
@@ -28,11 +21,9 @@ jobs:
         with:
           node-version: ${{ env.NVMRC }}
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
-        with:
-          useLockFile: false
+        uses: npm ci
       - name: Run semantic release
         run: npx semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
