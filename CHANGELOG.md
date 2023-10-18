@@ -1,3 +1,13 @@
+## [1.4.1](https://github.com/lytovka/eslint-config/compare/v1.4.0...v1.4.1) (2023-10-18)
+
+
+### CI 🛠️
+
+* pass `semantic_release_github_token` to the semantic-release step ([#111](https://github.com/lytovka/eslint-config/issues/111)) ([7e4cbd7](https://github.com/lytovka/eslint-config/commit/7e4cbd7fa26cab51586e00051df401383498bd64))
+* pass semantic release token to `actions/checkout` ([#109](https://github.com/lytovka/eslint-config/issues/109)) ([dff91d5](https://github.com/lytovka/eslint-config/commit/dff91d5f181c62b750b7d8d83b556ab3a5bcb2e4))
+* syntax error ([27a2453](https://github.com/lytovka/eslint-config/commit/27a2453ab62a3a264b3a19c376a261a4ce964817))
+* try removing the semantic release token ([#110](https://github.com/lytovka/eslint-config/issues/110)) ([95e35b8](https://github.com/lytovka/eslint-config/commit/95e35b87b74da21aacb79bfbfcda398431b0f7b6))
+
 ## [1.4.0](https://github.com/lytovka/eslint-config/compare/v1.3.0...v1.4.0) (2023-10-16)
 
 
