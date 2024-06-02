@@ -51,6 +51,7 @@
   },
   "dependencies": {
     "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.3.0",
     "typescript-eslint": "^7.11.0"
   },
   "devDependencies": {

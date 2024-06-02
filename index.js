@@ -2,6 +2,7 @@ import fs from "node:fs"
 import path from "node:path"
 import eslintConfigPrettier from "eslint-config-prettier";
 import typescriptEslint from "typescript-eslint"
+import globals from "globals"
 
 const tsConfig = process.env.ESLINT_TSCONFIG_PATH || "tsconfig.json"
 
@@ -18,6 +19,18 @@ export default [
   /* JS config */
   {
     files: ['**/*.{js,mjs,cjs}'],
+    name: "lytovka/javascript/rules",
+    languageOptions: {
+      ecmaVersion: 2022,
+      globals: {
+        ...globals.browser,
+        ...globals.es2021,
+        ...globals.node,
+        document: 'readonly',
+        navigator: 'readonly',
+        window: 'readonly',
+      },
+    },
     rules: {
       "accessor-pairs": "error",
       "array-callback-return": "error",
@@ -243,6 +256,7 @@ export default [
   /* TS config */
   {
     files: ["**/*.ts?(x)"],
+    name: "lytovka/typescript/rules",
     plugins: {
       '@typescript-eslint': typescriptEslint.plugin,
     },
