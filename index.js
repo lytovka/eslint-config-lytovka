@@ -9,7 +9,7 @@ const tsConfigAbsolutePath = fs.existsSync(tsConfig)
   ? path.resolve(tsConfig)
   : undefined
 
-const projectRootDir = __dirname
+const projectRootDir = import.meta.dirname
 
 /** @type { import("eslint").Linter.FlatConfig[] } */
 export default [
@@ -17,6 +17,7 @@ export default [
 
   /* JS config */
   {
+    files: ['**/*.{js,mjs,cjs}'],
     rules: {
       "accessor-pairs": "error",
       "array-callback-return": "error",
@@ -58,7 +59,7 @@ export default [
           argsIgnorePattern: "^_",
           ignoreRestSiblings: true,
           varsIgnorePattern: "^ignored",
-          catchErrorsIgnorePattern: "^err"
+          caughtErrorsIgnorePattern: "^err"
         },
       ],
       "no-unused-private-class-members": "error",
@@ -246,7 +247,7 @@ export default [
       '@typescript-eslint': typescriptEslint.plugin,
     },
     languageOptions: {
-      parser: tseslint.parser,
+      parser: typescriptEslint.parser,
       parserOptions: {
         ecmaVersion: 2020,
         sourceType: "module",
