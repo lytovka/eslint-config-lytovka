@@ -1,7 +1,6 @@
 import fs from "node:fs"
 import path from "node:path"
 import tseslint from 'typescript-eslint';
-import eslint from '@eslint/js'
 
 const tsConfig = process.env.ESLINT_TSCONFIG_PATH || "tsconfig.json"
 
@@ -29,11 +28,9 @@ export default [
       },
     },
     rules: {
-      ...eslint.configs.recommended.rules, // TODO: replace this with the rules from the custom config from the index.js file
       ...tseslint.configs.recommended.rules, // https://typescript-eslint.io/users/configs/#recommended
       ...tseslint.configs.eslintRecommended.rules, //https://typescript-eslint.io/users/configs/#eslint-recommended
 
-      // Recommended rules: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended-requiring-type-checking.ts
       "@typescript-eslint/await-thenable": "error",
       "@typescript-eslint/no-for-in-array": "error",
       "@typescript-eslint/no-implied-eval": "error",

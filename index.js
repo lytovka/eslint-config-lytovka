@@ -5,7 +5,6 @@ import globals from "globals"
 export default [
   eslintConfigPrettier,
   {
-    files: ['**/*.{js,mjs,cjs}'],
     name: "lytovka/javascript/rules",
     languageOptions: {
       ecmaVersion: 2022,
