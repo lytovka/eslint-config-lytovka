@@ -267,7 +267,10 @@ module.exports = {
         "require-await": "off",
         "@typescript-eslint/require-await": "error",
         "@typescript-eslint/restrict-plus-operands": "error",
-        "@typescript-eslint/restrict-template-expressions": "error",
+        "@typescript-eslint/restrict-template-expressions": [
+          "error",
+          { allowNumber: true, allowBoolean: true, allowAny: true },
+        ],
         "@typescript-eslint/unbound-method": "error",
 
         // Extension rules
