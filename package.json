@@ -50,6 +50,8 @@
   },
   "dependencies": {
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-react": "^7.37.1",
     "globals": "^15.3.0",
     "typescript-eslint": "^7.11.0"
   },
