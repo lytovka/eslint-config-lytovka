@@ -14,6 +14,7 @@ export function javascript(options = {}) {
   return [
     eslintConfigPrettier,
     {
+      files: ['**/*.{js,mjs,cjs}'],
       name: "lytovka/javascript/rules",
       languageOptions: {
         ecmaVersion: 2022,
@@ -226,7 +227,6 @@ export function javascript(options = {}) {
         "require-unicode-regexp": "off",
         "no-return-assign": "error",
         "operator-assignment": "off", // per-case basis
-        "no-throw-literal": "error",
         "prefer-object-has-own": "error",
         yoda: "error",
         "no-undefined": "off",

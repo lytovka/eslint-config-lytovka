@@ -24,7 +24,9 @@ export function typescript(options = {}) {
   const tsConfig = typeof tsconfigPath === "boolean" ? tsconfigPath : toArrayOrUndefined(tsconfigPath)
   const isTypeAware = !!tsConfig
 
+  console.log("tsconfigPath", tsconfigPath)
   console.log("loading TS rules")
+  console.log("isTypeAware", isTypeAware)
   return [
     {
       files: [GLOB_TS, GLOB_TSX],
@@ -36,6 +38,7 @@ export function typescript(options = {}) {
         parser: tseslint.parser,
         parserOptions: {
           sourceType: "module",
+          projectService: true,
           ...isTypeAware ? {
             tsconfigRootDir: projectRootDir,
             project: tsConfig,
@@ -67,7 +70,6 @@ export function typescript(options = {}) {
         "@typescript-eslint/no-array-constructor": "error",
         "@typescript-eslint/no-dupe-class-members": "off",
         "@typescript-eslint/no-empty-function": "error",
-        "@typescript-eslint/no-extra-semi": "error",
         "@typescript-eslint/no-invalid-this": "warn",
         "@typescript-eslint/no-loop-func": "warn",
         "@typescript-eslint/no-loss-of-precision": "error",
@@ -151,7 +153,6 @@ export function typescript(options = {}) {
         "@typescript-eslint/no-redundant-type-constituents": "error",
         "@typescript-eslint/no-require-imports": "off",
         "@typescript-eslint/no-this-alias": "error",
-        "@typescript-eslint/no-type-alias": "off",
         "@typescript-eslint/no-unnecessary-boolean-literal-compare": "warn",
         "@typescript-eslint/no-unnecessary-condition": "error",
         "@typescript-eslint/no-unnecessary-qualifier": "error",
@@ -177,7 +178,6 @@ export function typescript(options = {}) {
         "@typescript-eslint/prefer-regexp-exec": "warn",
         "@typescript-eslint/prefer-return-this-type": "warn",
         "@typescript-eslint/prefer-string-starts-ends-with": "error",
-        "@typescript-eslint/prefer-ts-expect-error": "off", // clashes with `ban-ts-comment` rule
         "@typescript-eslint/promise-function-async": "warn",
         "@typescript-eslint/require-array-sort-compare": "off",
         "@typescript-eslint/sort-type-constituents": "warn",

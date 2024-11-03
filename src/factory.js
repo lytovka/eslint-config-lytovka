@@ -27,18 +27,18 @@ export default function factory(options = {}) {
 
   /** @type { import("eslint").Linter.FlatConfig[] } */
   const configs = []
-  configs.push(javascript({ overrides: javascriptConfig.overrides }))
+  configs.push(javascript({ ...javascriptConfig }))
   if (typescriptConfig.enable) {
-    configs.push(typescript({ overrides: typescriptConfig.overrides }))
+    configs.push(typescript({ ...typescriptConfig }))
   }
   if (jsxA11yConfig.enable) {
-    configs.push(jsxA11y({ overrides: jsxA11yConfig.overrides }))
+    configs.push(jsxA11y({ ...jsxA11yConfig }))
   }
   if (reactConfig.enable) {
-    configs.push(react({ overrides: reactConfig.overrides }))
+    configs.push(react({ ...reactConfig }))
   }
   if (importingConfig.enable) {
-    configs.push(importing({ overrides: importingConfig.overrides }))
+    configs.push(importing({ ...importingConfig }))
   }
 
   return configs.flat()
