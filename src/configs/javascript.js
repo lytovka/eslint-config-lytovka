@@ -11,7 +11,6 @@ export function javascript(options = {}) {
   console.log("loading JS rules")
   const { overrides = {} } = options;
 
-  console.log(typeof eslintConfigPrettier, typeof globals)
   return [
     eslintConfigPrettier,
     {
@@ -59,7 +58,6 @@ export function javascript(options = {}) {
         "sort-keys": "off",
         "sort-vars": "off",
         "max-lines-per-function": "off",
-        "max-statements-per-line": ["error", { max: 1 }],
         "logical-assignment-operators": "off", // although more concise, this notation is arguably more difficult to comprehend
         "no-unused-vars": [
           "warn",
@@ -103,7 +101,6 @@ export function javascript(options = {}) {
         "no-invalid-regexp": "error",
         "no-irregular-whitespace": "error",
         "no-misleading-character-class": "error",
-        "no-new-symbol": "error",
         "no-nonoctal-decimal-escape": "error",
         "no-label-var": "error",
         "no-loop-func": "error",
@@ -143,8 +140,6 @@ export function javascript(options = {}) {
         "prefer-const": "error",
         "prefer-numeric-literals": "error",
         "init-declarations": "off",
-        "line-comment-position": "off", // smh
-        "lines-between-class-members": "off",
         "max-classes-per-file": "off",
         "max-depth": ["error", 4],
         "max-lines": [
@@ -155,7 +150,6 @@ export function javascript(options = {}) {
         "no-extend-native": "error",
         "max-params": ["error", 5],
         "max-statements": "off",
-        "multiline-comment-style": "off",
         "new-cap": "error",
         "no-alert": "error",
         "no-await-in-loop": "error",
@@ -215,10 +209,6 @@ export function javascript(options = {}) {
         "no-magic-numbers": "off", // we all need some magic once in a while
         "no-return-await": "off",
         "no-use-before-define": "off",
-        "padding-line-between-statements": [
-          "warn",
-          { blankLine: "always", prev: "*", next: "return" },
-        ],
         "prefer-spread": "error",
         strict: "off",
         "no-multi-str": "off",
@@ -227,7 +217,6 @@ export function javascript(options = {}) {
         "prefer-named-capture-group": "off", // gotta learn proper regex first
         "prefer-template": "error",
         "symbol-description": "error",
-        "no-new-object": "error",
         "no-void": "off",
         radix: "error",
         "use-isnan": "error",
@@ -237,7 +226,6 @@ export function javascript(options = {}) {
         "require-unicode-regexp": "off",
         "no-return-assign": "error",
         "operator-assignment": "off", // per-case basis
-        "spaced-comment": "off", // excessively pedantic rule
         "no-throw-literal": "error",
         "prefer-object-has-own": "error",
         yoda: "error",
