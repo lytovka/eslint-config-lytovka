@@ -6,9 +6,10 @@ import globals from "globals"
  *
  * @returns { import("eslint").Linter.FlatConfig[] }
  */
-export function typescript(options = {}) {
+export function importing(options = {}) {
   const { overrides = {} } = options;
 
+  console.log("loading importing rules")
   return [
     {
       files: ['**/*.{js,mjs,cjs}'],

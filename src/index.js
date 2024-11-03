@@ -1,4 +1,4 @@
-import factory from "./factory"
+import factory from "./factory.js"
 
 export * from "./factory"
 export * from "./configs"

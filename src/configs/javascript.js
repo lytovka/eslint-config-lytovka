@@ -8,8 +8,10 @@ import globals from "globals"
  * @returns { import("eslint").Linter.FlatConfig[] }
  */
 export function javascript(options = {}) {
+  console.log("loading JS rules")
   const { overrides = {} } = options;
 
+  console.log(typeof eslintConfigPrettier, typeof globals)
   return [
     eslintConfigPrettier,
     {

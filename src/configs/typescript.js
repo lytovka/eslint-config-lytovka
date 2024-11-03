@@ -1,5 +1,5 @@
 import tseslint from 'typescript-eslint';
-import { GLOB_TS, GLOB_TSX } from "../globs";
+import { GLOB_TS, GLOB_TSX } from "../globs.js";
 
 const projectRootDir = import.meta.dirname
 
@@ -24,6 +24,7 @@ export function typescript(options = {}) {
   const tsConfig = typeof tsconfigPath === "boolean" ? tsconfigPath : toArrayOrUndefined(tsconfigPath)
   const isTypeAware = !!tsConfig
 
+  console.log("loading TS rules")
   return [
     {
       files: [GLOB_TS, GLOB_TSX],

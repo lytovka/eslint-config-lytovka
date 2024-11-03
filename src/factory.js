@@ -4,7 +4,7 @@
  * @property {import("eslint").Linter.RulesRecord | undefined} [overrides] Rules overrides
  */
 
-import { javascript, typescript, jsxA11y, react } from "./configs"
+import { javascript, typescript, jsxA11y, react, importing } from "./configs/index.js"
 
 /**
  * @param { Object } options
@@ -20,15 +20,15 @@ export default function factory(options = {}) {
   const {
     javascript: javascriptConfig = { enable: true, overrides: undefined },
     typescript: typescriptConfig = { enable: true, overrides: undefined },
-    jsxA11y: jsxA11yConfig = { enable: true, overrides: undefined },
-    react: reactConfig = { enable: true, overrides: undefined },
-    import: importConfig = { enable: true, overrides: undefined },
+    jsxA11y: jsxA11yConfig = { enable: false, overrides: undefined },
+    react: reactConfig = { enable: false, overrides: undefined },
+    importing: importingConfig = { enable: false, overrides: undefined },
   } = options
 
   /** @type { import("eslint").Linter.FlatConfig[] } */
   const configs = []
   configs.push(javascript({ overrides: javascriptConfig.overrides }))
-  if (typescript.enable) {
+  if (typescriptConfig.enable) {
     configs.push(typescript({ overrides: typescriptConfig.overrides }))
   }
   if (jsxA11yConfig.enable) {
@@ -37,9 +37,9 @@ export default function factory(options = {}) {
   if (reactConfig.enable) {
     configs.push(react({ overrides: reactConfig.overrides }))
   }
-  if (importConfig.enable) {
-    configs.push(import({ overrides: importConfig.overrides }))
+  if (importingConfig.enable) {
+    configs.push(importing({ overrides: importingConfig.overrides }))
   }
 
-  return configs
+  return configs.flat()
 }

@@ -20,17 +20,18 @@
   },
   "author": "Ivan Lytovka <ivanlytovka@gmail.com> (https://github.com/lytovka)",
   "files": [
-    "index.js",
+    "src/index.js",
+    "src/factory/*",
     "package.json"
   ],
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "private": false,
   "publishConfig": {
     "access": "public"
   },
   "eslintConfig": {
-    "extends": "./index.js"
+    "extends": "./src/index.js"
   },
   "eslintIgnore": [
     "node_modules"

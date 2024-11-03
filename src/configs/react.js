@@ -10,6 +10,7 @@ import globals from "globals"
 export function react(options = {}) {
   const { overrides = {} } = options;
 
+  console.log("loading React rules")
   return [
     reactPlugin.configs.flat['jsx-runtime'], // TODO: figure out if this is required
     {
