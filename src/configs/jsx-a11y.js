@@ -1,3 +1,4 @@
+import jsxA11yPlugin from "eslint-plugin-jsx-a11y"
 import globals from "globals"
 
 /**
@@ -12,6 +13,7 @@ export function jsxA11y(options = {}) {
 
   console.log("loading a11y rules")
   return [
+    jsxA11yPlugin.flatConfigs.recommended,
     {
       name: "lytovka/jsx-a11y/rules",
       files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],

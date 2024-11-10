@@ -1,4 +1,5 @@
 import reactPlugin from "eslint-plugin-react"
+import reactHooksPlugin from "eslint-plugin-react-hooks"
 import globals from "globals"
 
 /**
@@ -14,12 +15,21 @@ export function react(options = {}) {
   return [
     reactPlugin.configs.flat['jsx-runtime'], // TODO: figure out if this is required
     {
+      name: "lytovka/react/rules",
+      settings: {
+        react: {
+          version: "detect",
+        },
+      },
       languageOptions: {
         ...reactPlugin.configs.flat.recommended.languageOptions,
         globals: {
           ...globals.serviceworker,
           ...globals.browser,
         },
+      },
+      plugins: {
+        "react-hooks": reactHooksPlugin,
       },
       rules: {
         // Recommended rules: https://github.com/jsx-eslint/eslint-plugin-react/blob/master/configs/recommended.js
@@ -69,7 +79,7 @@ export function react(options = {}) {
         "react/jsx-curly-newline": "warn",
         "react/jsx-curly-spacing": ["warn", { when: "never" }],
         "react/jsx-equals-spacing": ["warn", "never"],
-        "react/jsx-filename-extension": ["error"],
+        "react/jsx-filename-extension": ["error", { extensions: [".jsx", ".tsx"] }],
         "react/jsx-first-prop-new-line": "off",
         "react/jsx-fragments": "off",
         "react/jsx-handler-names": "off",

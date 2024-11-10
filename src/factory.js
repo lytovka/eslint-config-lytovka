@@ -4,6 +4,7 @@
  * @property {import("eslint").Linter.RulesRecord | undefined} [overrides] Rules overrides
  */
 
+import eslintConfigPrettier from "eslint-config-prettier";
 import { javascript, typescript, jsxA11y, react, importing } from "./configs/index.js"
 
 /**
@@ -20,13 +21,14 @@ export default function factory(options = {}) {
   const {
     javascript: javascriptConfig = { enable: true, overrides: undefined },
     typescript: typescriptConfig = { enable: true, overrides: undefined },
-    jsxA11y: jsxA11yConfig = { enable: false, overrides: undefined },
-    react: reactConfig = { enable: false, overrides: undefined },
+    jsxA11y: jsxA11yConfig = { enable: true, overrides: undefined },
+    react: reactConfig = { enable: true, overrides: undefined },
     importing: importingConfig = { enable: false, overrides: undefined },
   } = options
 
   /** @type { import("eslint").Linter.FlatConfig[] } */
   const configs = []
+  configs.push({ ...eslintConfigPrettier, name: "eslint-config-prettier/rules" })
   configs.push(javascript({ ...javascriptConfig }))
   if (typescriptConfig.enable) {
     configs.push(typescript({ ...typescriptConfig }))

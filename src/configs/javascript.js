@@ -1,4 +1,3 @@
-import eslintConfigPrettier from "eslint-config-prettier";
 import globals from "globals"
 
 /**
@@ -12,7 +11,6 @@ export function javascript(options = {}) {
   const { overrides = {} } = options;
 
   return [
-    eslintConfigPrettier,
     {
       files: ['**/*.{js,mjs,cjs}'],
       name: "lytovka/javascript/rules",
