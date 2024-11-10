@@ -60,7 +60,12 @@ export function typescript(options = {}) {
         "@typescript-eslint/no-unsafe-return": "error",
         "@typescript-eslint/require-await": "error",
         "@typescript-eslint/restrict-plus-operands": "error",
-        "@typescript-eslint/restrict-template-expressions": "error",
+        "@typescript-eslint/restrict-template-expressions": [
+          "error",
+          {
+            "allowNullish": true
+          }
+        ],
         "@typescript-eslint/unbound-method": "error",
 
         // Extension rules
@@ -90,10 +95,6 @@ export function typescript(options = {}) {
         ],
         "@typescript-eslint/no-use-before-define": "off",
         "@typescript-eslint/no-useless-constructor": "error",
-        "@typescript-eslint/padding-line-between-statements": [
-          "warn",
-          { blankLine: "always", prev: "*", next: "return" },
-        ],
         "@typescript-eslint/return-await": "error",
 
         // Remaining TypeScript Rules
