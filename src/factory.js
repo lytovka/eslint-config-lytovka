@@ -23,7 +23,7 @@ export default function factory(options = {}) {
     typescript: typescriptConfig = { enable: true, overrides: undefined },
     jsxA11y: jsxA11yConfig = { enable: true, overrides: undefined },
     react: reactConfig = { enable: true, overrides: undefined },
-    importing: importingConfig = { enable: false, overrides: undefined },
+    importing: importingConfig = { enable: true, overrides: undefined },
   } = options
 
   /** @type { import("eslint").Linter.FlatConfig[] } */
